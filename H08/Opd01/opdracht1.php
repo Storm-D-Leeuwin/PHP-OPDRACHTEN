@@ -1,21 +1,20 @@
-<?php 
+<?php
+
 include_once('Programma.php');
-include_once('liedjes.php');
+include_once('Liedjes.php');
 
-$programmaEen = new Programma();
-$programmaEen->setNaam("Eerste Programma");
-$programmaEen->setOmschrijving("Test Test Omschrijving");
+$ditprogramma = new Programma();
+$ditprogramma->setNaam('Mijn eerste programma');
+$ditprogramma->setOmschrijving('Even testen');
 
-
-foreach($programmaEen->getProgramma() as $p) {
-  echo $p. "<br>";
+foreach ($ditprogramma->getProgramma() as $p) {
+  echo $p . "<br>";
 }
 
+$nieuwliedje = new Liedje('dit is de titel', 'rolling stones');
 
-$nieuwlied = new liedje("Titell", "Rolling Stones");
+$ditprogramma->voegLiedjeToe($nieuwliedje);
 
-
-$programmaEen->voegLiedjeToe($nieuwlied);
-foreach($programmaEen->getLiedjes() as $liedje) {
-echo $liedje->getTitel()." - ".$liedje->getArtiest(). "<br>";
+foreach ($ditprogramma->getLiedjes() as $liedje) {
+  echo $liedje->getTitel() . " - " . $liedje->getArtiest() . "<br>";
 }
