@@ -1,6 +1,6 @@
 <?php
 
-class Programma
+class Programm
 {
   private $naam = "";
   private $omschrijving = "";
